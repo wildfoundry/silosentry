@@ -3,16 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SiloSentry — Grain bin monitoring for elevators</title>
+    <title>SiloSentry — An illustrative Dataplicity fleet</title>
     <meta
       name="description"
-      content="SiloSentry is a made-up Midwest agtech OEM built to illustrate Dataplicity. Probe gateways, aeration controllers, and site gateways for grain elevators — operated on Dataplicity."
+      content="SiloSentry is a made-up grain-bin sensor / SaaS IoT company used to illustrate how Dataplicity works after devices ship."
     />
     <link rel="canonical" href="https://silosentry.com/" />
-    <meta property="og:title" content="SiloSentry — How an OEM runs on Dataplicity" />
+    <meta property="og:title" content="SiloSentry — An illustrative Dataplicity fleet" />
     <meta
       property="og:description"
-      content="A fictional grain-silo sensor company that shows how Dataplicity works end-to-end: provision, Wormhole, terminal, alerts, status, and OEM ops."
+      content="A believable grain-sensor SaaS IoT setup that shows Dataplicity end-to-end: provision, Wormhole, terminal, alerts, and ops."
     />
     <meta property="og:url" content="https://silosentry.com/" />
     <meta property="og:type" content="website" />
@@ -33,11 +33,10 @@
         SiloSentry
       </a>
       <nav class="nav" aria-label="Primary">
-        <a href="#product">Product</a>
-        <a href="#stack">Stack</a>
+        <a href="#setup">The setup</a>
         <a href="#fleet">Fleet</a>
-        <a href="#support">Support</a>
-        <a href="#day">A day</a>
+        <a href="#access">Access</a>
+        <a href="#ops">Ops</a>
       </nav>
       <a class="top__dp" href="https://www.dataplicity.com/" rel="noopener">Built on Dataplicity</a>
     </header>
@@ -53,71 +52,46 @@
           <p class="eyebrow">Illustrative project · Not a real company</p>
           <h1>SiloSentry</h1>
           <p class="lede">
-            A made-up Midwest OEM that sells grain-bin sensors to elevators.
-            This site walks through how that business would actually run after the hardware ships —
-            on <a href="https://www.dataplicity.com/">Dataplicity</a>.
+            Imagine a SaaS IoT company that puts temperature and moisture sensors in grain bins,
+            then has to support those Linux boxes for years in the field.
+            This site uses that story to show what
+            <a href="https://www.dataplicity.com/">Dataplicity</a> is for.
           </p>
           <div class="hero__actions">
-            <a class="btn btn--primary" href="#product">See the product</a>
-            <a class="btn btn--ghost" href="#stack">See the stack</a>
+            <a class="btn btn--primary" href="#setup">How it’s wired</a>
+            <a class="btn btn--ghost" href="#fleet">See the fleet</a>
           </div>
         </div>
       </section>
 
       <section class="band band--note" aria-label="About this site">
         <p>
-          SiloSentry is fictional, but the operating model is realistic: co-ops buy probes;
-          support keeps the Linux gateways alive with
-          <a href="https://www.dataplicity.com/">Dataplicity</a>
-          (remote shell, Wormhole URLs, alerts, status pages, OEM tooling) instead of a home-grown VPN.
-          Use it as a worked example of what Dataplicity is for.
+          SiloSentry isn’t a product we’re selling. It’s a made-up but believable OEM:
+          edge gateways on elevators, a cloud app for the grain data, and Dataplicity underneath
+          for remote access, monitoring, and ops — so you can see the platform in a concrete setting.
         </p>
       </section>
 
-      <section class="section" id="product">
+      <section class="section" id="setup">
         <div class="section__head">
-          <p class="eyebrow">What elevators buy</p>
-          <h2>Three SKUs. One outbound tunnel.</h2>
+          <p class="eyebrow">The setup</p>
+          <h2>Grain sensors on the edge. SaaS in the cloud. Dataplicity in between.</h2>
           <p class="section__sub">
-            Every unit is a Debian box on cellular or farm Wi‑Fi. No public IP. No inbound SSH.
-            The co-op never opens a firewall hole.
+            Enough product to make the ops story make sense: Linux gateways at co-op elevators,
+            a customer-facing cloud for bin telemetry, and Dataplicity as the control plane
+            that keeps devices reachable without VPNs or inbound ports.
           </p>
-        </div>
-        <ul class="skus">
-          <li>
-            <h3>Probe Gateway</h3>
-            <p>Raspberry Pi 4 + multi-point temp/moisture cable. Watches the grain mass inside a bin.</p>
-          </li>
-          <li>
-            <h3>Aeration Controller</h3>
-            <p>Fan/VFD control with ambient RH. Runs fans when differential pressure and humidity say so.</p>
-          </li>
-          <li>
-            <h3>Site Gateway</h3>
-            <p>LTE aggregator for the elevator. Hosts the local silo UI and bridges to SiloSentry Cloud.</p>
-          </li>
-        </ul>
-        <p class="customers">
-          Customers look like Red River Co-op (Grand Forks), Prairie Star (Bismarck), Heartland Grain (Sioux Falls),
-          and High Plains Terminal (Amarillo) — harvest-critical sites where a dead sensor can spoil a bin overnight.
-        </p>
-      </section>
-
-      <section class="section section--split" id="stack">
-        <div class="section__head">
-          <p class="eyebrow">How the company is wired</p>
-          <h2>Two planes. One device record.</h2>
         </div>
         <div class="planes">
           <article>
-            <h3>SiloSentry Cloud</h3>
+            <h3>Their cloud</h3>
             <p class="mono">app.silosentry.com</p>
-            <p>Commodity telemetry, farmer dashboards, co-op billing. Domain logic we own.</p>
+            <p>Where co-ops see bin data and where SiloSentry bills. Domain software — not Dataplicity.</p>
           </article>
           <article>
             <h3>Dataplicity</h3>
             <p class="mono">control plane</p>
-            <p>Identity, presence, Wormhole, terminal, alerts, status, licences/RMA. Ops substrate we don’t reinvent.</p>
+            <p>Provision, presence, Wormhole, terminal, alerts, status, OEM tooling. The ops substrate.</p>
           </article>
         </div>
         <figure class="arch">
@@ -125,195 +99,155 @@
         │                      ▲
         │               outbound TLS
         ▼                      │
-   Elevator site ── Site Gateway ── Wormhole :8080 UI
-                         ├── Probe GW (Silo A / B / C)
-                         └── Aeration Controller</pre>
+   Elevator / farm site ── Linux gateway(s)
+                           sensors · local UI · LTE/Wi‑Fi</pre>
         </figure>
       </section>
 
       <section class="section" id="fleet">
         <div class="section__head">
-          <p class="eyebrow">From factory to farm</p>
-          <h2>Ship hardware. Keep a shell.</h2>
+          <p class="eyebrow">Fleet</p>
+          <h2>Ship a gateway. It shows up in Dataplicity.</h2>
           <p class="section__sub">
-            Device classes are our SKUs inside Dataplicity. Networks are elevators.
-            Tags carry customer, commodity, criticality, and connectivity.
+            Install is a one-liner at first boot. Sites become Networks. SKUs become device classes.
+            Support opens a co-op’s network when they call — no public IP required.
           </p>
         </div>
 
         <ol class="steps">
           <li>
-            <strong>Define the catalog</strong>
-            <span>Probe GW, Aeration Controller, Site Gateway — warranty windows and inventory filters live on the class.</span>
+            <strong>Provision</strong>
+            <span><code>curl … | sudo bash</code> with an org key. Outbound only.</span>
           </li>
           <li>
-            <strong>Bake the agent</strong>
-            <span><code>curl -fsSL https://install.dataplicity.com/&lt;key&gt;.sh | sudo bash</code> at first boot. Outbound only.</span>
+            <strong>Group by site</strong>
+            <span>Each elevator is a Network; tags carry customer and criticality.</span>
           </li>
           <li>
-            <strong>Map sites</strong>
-            <span>Each co-op elevator is a Dataplicity Network. Support opens the network when the co-op calls.</span>
+            <strong>Operate the fleet</strong>
+            <span>Online/offline, device detail, and bulk actions live on the same record.</span>
           </li>
         </ol>
 
         <figure class="shot">
-          <img src="screenshots/10-device-classes.png" alt="Dataplicity device classes for SiloSentry SKUs" loading="lazy" />
-          <figcaption>Device classes = the operable catalog of what we ship.</figcaption>
+          <img src="screenshots/09-device-fleet.png" alt="Fleet list in Dataplicity" loading="lazy" />
+          <figcaption>A demo fleet of bin gateways across a few Plains elevators.</figcaption>
         </figure>
-        <figure class="shot">
-          <img src="screenshots/09-device-fleet.png" alt="SiloSentry fleet list across co-op sites" loading="lazy" />
-          <figcaption>Fifteen demo devices across four Plains elevators — West Cell Milo, Truck Dump Gateway, North Bin Soft White.</figcaption>
-        </figure>
-        <figure class="shot">
-          <img src="screenshots/28-platform-provisioning.png" alt="Dataplicity provisioning documentation" loading="lazy" />
-          <figcaption>Provisioning is a factory/field path: one curl, no per-site VPN.</figcaption>
-        </figure>
+        <div class="pair">
+          <figure class="shot">
+            <img src="screenshots/10-device-classes.png" alt="Device classes in Dataplicity" loading="lazy" />
+            <figcaption>Device classes stand in for the hardware SKUs.</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="screenshots/28-platform-provisioning.png" alt="Provisioning on Dataplicity" loading="lazy" />
+            <figcaption>Factory / field install without opening inbound ports.</figcaption>
+          </figure>
+        </div>
       </section>
 
-      <section class="section" id="support">
+      <section class="section" id="access">
         <div class="section__head">
-          <p class="eyebrow">Support without a truck roll</p>
-          <h2>Wormhole for the silo UI. Terminal when it wedges.</h2>
+          <p class="eyebrow">Remote access</p>
+          <h2>Open the gateway’s local UI. Drop to a shell when it wedges.</h2>
           <p class="section__sub">
-            Every probe and site gateway runs a local HTTP UI on <code>127.0.0.1:8080</code> —
-            calibration, live cable temps, fan overrides. Dataplicity Wormhole publishes a stable HTTPS URL
-            through the outbound agent. When that’s not enough, L1 opens a browser shell.
+            Edge boxes usually host a small admin page on localhost. Wormhole publishes that over HTTPS.
+            When the process is stuck, terminal is break-glass — still without a truck roll.
           </p>
         </div>
 
         <div class="pair">
           <figure class="shot">
-            <img src="screenshots/06-module-wormhole.png" alt="Dataplicity Wormhole feature" loading="lazy" />
-            <figcaption>Wormhole — open the silo admin page without inbound ports.</figcaption>
+            <img src="screenshots/06-module-wormhole.png" alt="Dataplicity Wormhole" loading="lazy" />
+            <figcaption>Wormhole — HTTPS to a device-local web UI.</figcaption>
           </figure>
           <figure class="shot">
             <img src="screenshots/24-terminal.png" alt="Dataplicity remote terminal" loading="lazy" />
-            <figcaption>Terminal runbook: <code>systemctl status probe-daemon</code>, journals, modem resets.</figcaption>
+            <figcaption>Browser terminal for journals, services, modem resets.</figcaption>
           </figure>
         </div>
-
         <figure class="shot">
-          <img src="screenshots/11-device-detail.png" alt="Single SiloSentry device detail in Dataplicity" loading="lazy" />
-          <figcaption>Device detail for a Hard Red Spring silo probe — agent, OS, Web CLI, connection quality.</figcaption>
+          <img src="screenshots/11-device-detail.png" alt="Device detail in Dataplicity" loading="lazy" />
+          <figcaption>One gateway’s record: agent, OS, connectivity, Web CLI.</figcaption>
         </figure>
       </section>
 
       <section class="section" id="ops">
         <div class="section__head">
-          <p class="eyebrow">Ops &amp; trust</p>
-          <h2>Maya’s morning starts on Operations overview.</h2>
+          <p class="eyebrow">Ops</p>
+          <h2>Know when a bin gateway goes quiet — before harvest calls pile up.</h2>
+          <p class="section__sub">
+            Alerts, status pages, file requests from installers, and a map when LTE flakes regionally.
+            Same patterns any SaaS IoT fleet needs; the grain story just makes them concrete.
+          </p>
         </div>
         <figure class="shot">
-          <img src="screenshots/08-operations-dashboard.png" alt="Operations overview for SiloSentry" loading="lazy" />
-          <figcaption>Acknowledgements, alarms, detections, fleet online %.</figcaption>
+          <img src="screenshots/08-operations-dashboard.png" alt="Operations overview" loading="lazy" />
+          <figcaption>Operations overview — what needs attention now.</figcaption>
         </figure>
         <figure class="shot">
-          <img src="screenshots/14-alerts.png" alt="SiloSentry alerts inbox" loading="lazy" />
-          <figcaption>Offline and hot-bin alerts across the demo fleet — routed to Slack / on-call.</figcaption>
+          <img src="screenshots/14-alerts.png" alt="Alerts inbox" loading="lazy" />
+          <figcaption>Offline and device alerts into Slack / on-call.</figcaption>
         </figure>
         <div class="pair">
           <figure class="shot">
-            <img src="screenshots/15-status-pages.png" alt="Customer status page" loading="lazy" />
-            <figcaption>Status page for co-ops when Cloud or edge is degraded.</figcaption>
+            <img src="screenshots/15-status-pages.png" alt="Status pages" loading="lazy" />
+            <figcaption>Customer-facing status when the platform is the question.</figcaption>
           </figure>
           <figure class="shot">
-            <img src="screenshots/22-file-requests.png" alt="File requests for field installers" loading="lazy" />
-            <figcaption>File requests — installer photos and journal dumps without email threads.</figcaption>
+            <img src="screenshots/22-file-requests.png" alt="File requests" loading="lazy" />
+            <figcaption>Installer dumps and photos without email threads.</figcaption>
           </figure>
         </div>
         <figure class="shot">
-          <img src="screenshots/16-fleet-map.png" alt="Fleet map of Plains sites" loading="lazy" />
-          <figcaption>Fleet map — “is it just Sioux Falls LTE?”</figcaption>
+          <img src="screenshots/16-fleet-map.png" alt="Fleet map" loading="lazy" />
+          <figcaption>Fleet map — is this one site or a whole region?</figcaption>
         </figure>
       </section>
 
       <section class="section" id="day">
         <div class="section__head">
-          <p class="eyebrow">A day in the life</p>
-          <h2>Four calls that used to mean a truck.</h2>
+          <p class="eyebrow">In practice</p>
+          <h2>What a support day looks like.</h2>
         </div>
         <div class="timeline">
           <article>
-            <time>06:40</time>
-            <h3>Hot bin at Heartland</h3>
-            <p>
-              Slack warning on Tower 2 Yellow Corn → Wormhole shows cable segment 4 at 31°C →
-              terminal confirms aeration → file request for dryer logs. Status page stays green:
-              site issue, not platform outage.
-            </p>
+            <time>Morning</time>
+            <h3>Hot spot on a bin</h3>
+            <p>Alert → Wormhole into the gateway UI → terminal if the service is wedged → close it out.</p>
           </article>
           <article>
-            <time>11:15</time>
-            <h3>Offline dryer at Red River</h3>
-            <p>
-              Connectivity alert → fleet map isolates Grand Forks LTE → SIM check →
-              installer Field Check + antenna photo via file request → heartbeats resume.
-            </p>
+            <time>Midday</time>
+            <h3>Gateway offline</h3>
+            <p>Connectivity alert → map / SIM check → field tech uploads a photo via file request → back online.</p>
           </article>
           <article>
-            <time>15:00</time>
-            <h3>Harvest readiness sweep</h3>
-            <p>
-              Filter <code>tier:critical</code> → Wormhole healthz green on site gateways →
-              spot-check <code>probe-daemon</code> on one LTE box per co-op.
-            </p>
+            <time>Afternoon</time>
+            <h3>Pre-harvest sweep</h3>
+            <p>Filter critical sites, confirm health checks, spot-check a shell on a couple of gateways.</p>
           </article>
           <article>
-            <time>16:30</time>
-            <h3>Dealer onboarding</h3>
-            <p>
-              OEM customer + licence claim codes with the hardware shipment.
-              Operators get SiloSentry Cloud; Dataplicity stays for our support team.
-            </p>
+            <time>Later</time>
+            <h3>Ship more hardware</h3>
+            <p>Licences and claim codes travel with the boxes; Dataplicity stays the support plane.</p>
           </article>
         </div>
-      </section>
-
-      <section class="section" id="commercial">
-        <div class="section__head">
-          <p class="eyebrow">Commercial loop</p>
-          <h2>Sell the probe. Sell the years of connect.</h2>
-          <p class="section__sub">
-            End customers live in SiloSentry Cloud. Dataplicity holds customers, licence tiers,
-            claim bundles, warranty, and RMA beside engineering — same org that flashes devices closes returns.
-          </p>
-        </div>
-        <div class="pair">
-          <figure class="shot">
-            <img src="screenshots/21-oem-customers.png" alt="OEM customers and licence tooling" loading="lazy" />
-            <figcaption>Licence tiers &amp; RMA next to the fleet.</figcaption>
-          </figure>
-          <figure class="shot">
-            <img src="screenshots/19-integrations.png" alt="Integrations hub" loading="lazy" />
-            <figcaption>API keys, Slack, SIMs — Cloud and Dataplicity in lockstep.</figcaption>
-          </figure>
-        </div>
-
-        <ul class="payback">
-          <li><strong>Terminal + Wormhole</strong> — kill rural truck rolls ($400–$900 each).</li>
-          <li><strong>Alerts + status</strong> — stop “is it down?” calls during harvest.</li>
-          <li><strong>File requests + audit</strong> — installer evidence without inboxes.</li>
-          <li><strong>Licences + claims</strong> — connectivity subscription attached to hardware.</li>
-        </ul>
       </section>
 
       <section class="section section--close" id="map">
         <div class="section__head">
-          <p class="eyebrow">The reusable map</p>
-          <h2>Not a Pi with a dashboard.</h2>
+          <p class="eyebrow">Takeaway</p>
+          <h2>The grain story is disposable. The ops map isn’t.</h2>
           <p class="section__sub">
-            SiloSentry is a hardware company that must stay in the support loop for years after a bin is welded shut.
-            Dataplicity productises that loop.
+            Swap bins for chargers, cameras, or cold-chain nodes — the Dataplicity loop stays the same.
           </p>
         </div>
         <p class="mapline">
-          Device class = SKU → Network = site → Wormhole = local UI → Terminal = break-glass →
-          Alerts/Status = trust → OEM licences/RMA = commercial scale.
+          Class = SKU → Network = site → Wormhole = local UI → Terminal = break-glass →
+          Alerts/Status = trust → Licences/RMA = commercial scale.
         </p>
         <p class="close-cta">
-          Building industrial sensors, EV chargers, cold-chain gateways, or signage?
-          <a href="https://www.dataplicity.com/">Start with Dataplicity</a> —
-          SiloSentry is how that business looks when it’s honest about the ops plane.
+          <a href="https://www.dataplicity.com/">Explore Dataplicity</a>
+          if you’re shipping Linux devices that still need a support loop after they leave the factory.
         </p>
       </section>
     </main>
@@ -321,12 +255,11 @@
     <footer class="foot">
       <div>
         <strong>SiloSentry</strong>
-        <span>Fictional company · silosentry.com</span>
+        <span>Made-up illustrative project · silosentry.com</span>
       </div>
       <p>
-        Made-up illustrative project for
+        Not a real company or product — a worked example for
         <a href="https://www.dataplicity.com/">Dataplicity</a>.
-        Not a real product or company.
       </p>
       <p class="foot__repo">
         <a href="https://github.com/wildfoundry/silosentry">github.com/wildfoundry/silosentry</a>

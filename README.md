@@ -1,10 +1,10 @@
 # SiloSentry
 
-Made-up Midwest agtech OEM used to illustrate [Dataplicity](https://www.dataplicity.com/).
+Made-up grain-bin / SaaS IoT OEM used to illustrate [Dataplicity](https://www.dataplicity.com/).
 
-**Site:** [silosentry.com](https://silosentry.com) (GitHub Pages from this repo)
+**Site:** [silosentry.com](https://silosentry.com) (GitHub Pages)
 
-Inverse product site: shows how a grain-bin sensor company would actually operate gateways on Dataplicity (provisioning, Wormhole, terminal, alerts, status, OEM licences/RMA) — not a co-op sales pitch. Clearly fictional; the ops model is meant to feel real.
+Enough product context to be believable (edge sensors + cloud), then the focus is how Dataplicity runs the fleet: provision, Wormhole, terminal, alerts, status, OEM ops. Clearly fictional.
 
 ## Local preview
 
