@@ -201,7 +201,7 @@ code,
   margin: 0 auto;
   padding: clamp(2.25rem, 5vw, 3.25rem) 1.5rem clamp(2rem, 4vw, 2.75rem);
   display: grid;
-  gap: 1.75rem;
+  gap: 2.25rem;
   animation: fade-up 0.55s ease both;
 }
 
@@ -219,23 +219,59 @@ code,
   color: var(--straw);
 }
 
+.hero__lead {
+  max-width: 42rem;
+}
+
 .hero h1 {
-  margin: 0 0 1.25rem;
+  margin: 0;
   font-family: var(--display);
   font-weight: 700;
-  font-size: clamp(1.85rem, 4.5vw, 2.65rem);
+  font-size: clamp(1.85rem, 4.6vw, 2.85rem);
   line-height: 1.12;
   letter-spacing: -0.03em;
-  max-width: 28ch;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--straw);
+}
+
+.lede {
+  margin: 1rem 0 0;
+  max-width: 38rem;
+  font-size: 1.05rem;
+  color: var(--ink-dim);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.35rem;
 }
 
 .who {
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--line);
+}
+
+.who__intro {
+  margin: 0 0 1rem;
+  font-family: var(--display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink-dim);
+}
+
+.who__grid {
   display: grid;
   gap: 1rem;
 }
 
 @media (min-width: 720px) {
-  .who {
+  .who__grid {
     grid-template-columns: 1fr 1fr;
     gap: 1.15rem;
   }
@@ -245,7 +281,7 @@ code,
   background: var(--bg-elev);
   border: 1px solid var(--line);
   border-radius: 0.35rem;
-  padding: 1.25rem 1.35rem 1.35rem;
+  padding: 1.15rem 1.25rem 1.25rem;
 }
 
 .who__card--setting {
@@ -253,7 +289,7 @@ code,
 }
 
 .who__role {
-  margin: 0 0 0.4rem;
+  margin: 0 0 0.35rem;
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.12em;
@@ -262,17 +298,17 @@ code,
 }
 
 .who__card h2 {
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.65rem;
   font-family: var(--display);
   font-weight: 600;
-  font-size: 1.45rem;
+  font-size: 1.3rem;
   letter-spacing: -0.02em;
 }
 
 .who__card p {
-  margin: 0 0 0.7rem;
+  margin: 0 0 0.65rem;
   color: var(--ink-dim);
-  font-size: 0.98rem;
+  font-size: 0.95rem;
 }
 
 .who__card p:last-child {
@@ -285,53 +321,8 @@ code,
 }
 
 .who__link {
-  margin-top: 0.85rem !important;
-  font-size: 0.92rem !important;
-}
-
-.hero__question {
-  margin-top: 0.35rem;
-  padding: 1.25rem 1.35rem;
-  border-left: 3px solid var(--straw);
-  background: rgba(212, 168, 75, 0.06);
-}
-
-.hero__question-label {
-  margin: 0 0 0.4rem;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--straw);
-}
-
-.hero__question-text {
-  margin: 0;
-  font-family: var(--display);
-  font-size: clamp(1.2rem, 2.5vw, 1.55rem);
-  font-weight: 600;
-  line-height: 1.3;
-  letter-spacing: -0.02em;
-  max-width: 40rem;
-}
-
-.hero__question-text em {
-  font-style: italic;
-  color: var(--straw);
-}
-
-.lede {
-  margin: 0.95rem 0 0;
-  max-width: 40rem;
-  font-size: 1.02rem;
-  color: var(--ink-dim);
-}
-
-.hero__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 1.25rem;
+  margin-top: 0.75rem !important;
+  font-size: 0.9rem !important;
 }
 
 .btn {
