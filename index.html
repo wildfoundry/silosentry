@@ -350,6 +350,24 @@
       </p>
     </footer>
 
+    <div
+      class="lightbox"
+      id="lightbox"
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-label="Expanded screenshot"
+    >
+      <button type="button" class="lightbox__backdrop" data-lightbox-close aria-label="Close"></button>
+      <div class="lightbox__panel">
+        <button type="button" class="lightbox__close" data-lightbox-close aria-label="Close">
+          Close
+        </button>
+        <img class="lightbox__img" alt="" />
+        <p class="lightbox__cap" hidden></p>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
