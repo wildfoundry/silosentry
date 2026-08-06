@@ -33,7 +33,6 @@
         SiloSentry
       </a>
       <nav class="nav" aria-label="Primary">
-        <a href="#what">What it is</a>
         <a href="#loop">The loop</a>
         <a href="#scale">At scale</a>
         <a href="#day">A day</a>
@@ -43,62 +42,48 @@
 
     <main id="main">
       <section class="hero" id="top">
-        <div class="hero__sky" aria-hidden="true"></div>
-        <div class="hero__grain" aria-hidden="true"></div>
-        <div class="hero__elevators" aria-hidden="true">
-          <span></span><span></span><span></span><span></span><span></span>
-        </div>
-        <div class="hero__copy">
-          <p class="eyebrow">A worked example · Not a real product</p>
-          <h1>SiloSentry</h1>
-          <p class="lede">
-            This site exists to answer one question:
-            <strong>what is <a href="https://www.dataplicity.com/">Dataplicity</a>?</strong>
-            SiloSentry is the made-up grain-bin IoT company we use so the answer isn’t abstract —
-            you can see the same remote-ops loop a real OEM would live in.
-          </p>
-          <div class="hero__actions">
-            <a class="btn btn--primary" href="#what">Start with the idea</a>
-            <a class="btn btn--ghost" href="#loop">See the loop</a>
+        <div class="hero__wash" aria-hidden="true"></div>
+        <div class="hero__inner">
+          <div class="hero__copy">
+            <p class="eyebrow">Worked example · SiloSentry is not a real company</p>
+            <h1>What <a href="https://www.dataplicity.com/">Dataplicity</a> is</h1>
+            <p class="lede">
+              Remote access and ops for Linux devices after they leave the factory —
+              without VPN, inbound ports, or a truck for every stuck service.
+              SiloSentry is the made-up grain-bin OEM we use so that idea isn’t abstract.
+            </p>
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="#loop">See the loop</a>
+              <a class="btn btn--ghost" href="#scale">Then see it at fleet scale</a>
+            </div>
+          </div>
+
+          <div class="contrast contrast--hero" aria-label="Without Dataplicity versus with it">
+            <article>
+              <h3>Without it</h3>
+              <p>
+                VPN snowflakes, port forwards that die on LTE,
+                “can you reboot it?”, truck rolls for a wedged process,
+                no shared picture of the fleet this week.
+              </p>
+            </article>
+            <article>
+              <h3>With Dataplicity</h3>
+              <p>
+                Install an outbound agent. The device appears.
+                Open its local UI or a browser shell. Know who’s quiet.
+                Run the same fix across many — for years.
+              </p>
+            </article>
           </div>
         </div>
       </section>
 
-      <section class="section" id="what">
-        <div class="section__head">
-          <p class="eyebrow">What Dataplicity is</p>
-          <h2>Remote access and ops for Linux devices — after they leave the factory.</h2>
-          <p class="section__sub">
-            Not a grain-data SaaS. Not a VPN product you babysit.
-            Dataplicity is the control plane between your team and boxes in the field:
-            they call out over ordinary internet, show up in your account, and stay reachable
-            for UI, shell, alerts, and fleet work — without opening inbound ports.
-          </p>
-        </div>
-
-        <div class="contrast">
-          <article>
-            <h3>Without it</h3>
-            <p>
-              Every site is a snowflake: VPN configs, port forwards that die on LTE,
-              “can you reboot it for us?”, truck rolls for a stuck service,
-              no shared picture of what the fleet looks like this week.
-            </p>
-          </article>
-          <article>
-            <h3>With Dataplicity</h3>
-            <p>
-              Install an agent once. The device appears.
-              Open its local web UI in the browser. Drop to a terminal when it’s wedged.
-              See who’s quiet. Run the same fix across many. Keep doing that for years.
-            </p>
-          </article>
-        </div>
-
-        <p class="bridge">
-          SiloSentry’s product is temperature and moisture in grain bins.
-          <em>Dataplicity is how their support team keeps those Linux gateways operable</em>
-          after the install crew leaves the elevator.
+      <section class="band band--note" aria-label="How to read this site">
+        <p>
+          SiloSentry’s product is bin telemetry.
+          <em>Dataplicity is how their support team keeps those gateways operable</em>
+          after the install crew leaves. Screens below are evidence for that story.
         </p>
       </section>
 
