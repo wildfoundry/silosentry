@@ -95,6 +95,37 @@
 })();
 
 (() => {
+  // Sticky header: in-page nav should land below .top, not under it.
+  function headerOffset() {
+    const top = document.querySelector(".top");
+    return (top ? top.getBoundingClientRect().height : 0) + 8;
+  }
+
+  function scrollToHash(hash, { updateHistory = true } = {}) {
+    if (!hash || hash === "#") return false;
+    const id = decodeURIComponent(hash.replace(/^#/, ""));
+    const target = document.getElementById(id);
+    if (!target) return false;
+    const top = Math.max(0, window.scrollY + target.getBoundingClientRect().top - headerOffset());
+    window.scrollTo({ top, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+    if (updateHistory && window.location.hash !== `#${id}`) {
+      history.pushState(null, "", `#${id}`);
+    }
+    return true;
+  }
+
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", (event) => {
+      const href = link.getAttribute("href");
+      if (!href || href === "#") return;
+      if (scrollToHash(href)) event.preventDefault();
+    });
+  });
+
+  window.addEventListener("load", () => {
+    if (window.location.hash) scrollToHash(window.location.hash, { updateHistory: false });
+  });
+
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (!reduce) {
     const nodes = document.querySelectorAll(
