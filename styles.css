@@ -807,10 +807,6 @@ code,
   color: var(--ink);
 }
 
-.foot__repo {
-  margin-top: 0.75rem;
-}
-
 /* reveal on scroll */
 .reveal {
   opacity: 0;
