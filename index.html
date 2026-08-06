@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>How an IoT company runs on Dataplicity — SiloSentry example</title>
+    <title>How an IoT company runs on Dataplicity (SiloSentry example)</title>
     <meta
       name="description"
       content="A plain-English walkthrough: Dataplicity is software for managing Linux IoT devices after they ship. SiloSentry is a made-up grain OEM that shows what running your product company on Dataplicity looks like."
     />
     <link rel="canonical" href="https://silosentry.com/" />
-    <meta property="og:title" content="How an IoT company runs on Dataplicity — SiloSentry example" />
+    <meta property="og:title" content="How an IoT company runs on Dataplicity (SiloSentry example)" />
     <meta
       property="og:description"
       content="Orientation first: who Dataplicity is, what SiloSentry is, then what post-ship device ops looks like."
@@ -53,9 +53,9 @@
               to manage devices after they ship?
             </h1>
             <p class="lede">
-              Screenshots from a SiloSentry demo org on Dataplicity —
-              devices, ops dashboards, incidents, fleet fixes —
-              so you can picture your own company in that seat.
+              Screenshots from a SiloSentry demo org on Dataplicity:
+              devices, ops dashboards, incidents, fleet fixes.
+              Use them to picture your own company in that seat.
             </p>
             <div class="hero__actions">
               <a class="btn btn--primary" href="#devices">Show me the devices</a>
@@ -70,7 +70,7 @@
                 <p class="who__role">The real product</p>
                 <h2>Dataplicity</h2>
                 <p>
-                  Software for <strong>IoT product companies</strong> —
+                  Software for <strong>IoT product companies</strong>:
                   remote access, fleet monitoring, incidents, and fixes after devices leave the factory,
                   without VPN or inbound ports on every site.
                 </p>
@@ -83,7 +83,7 @@
                 <h2>SiloSentry</h2>
                 <p>
                   <strong>Not real.</strong> A grain-bin sensor OEM we invented so the product isn’t abstract.
-                  Their customer cloud is separate —
+                  Their customer cloud is separate.
                   <em>Dataplicity is how they support the gateways.</em>
                 </p>
                 <p class="who__link">This whole site is that fiction, used as a tour.</p>
@@ -99,7 +99,7 @@
           <h2>Not “PagerDuty + Geckoboard + a VPN spreadsheet.”</h2>
           <p class="section__sub">
             Those products each do a job. An IoT OEM needs those jobs attached to the
-            <em>same device records</em> — from install through monitoring, paging, fixes, warranty, and RMA.
+            <em>same device records</em>, from install through monitoring, paging, fixes, warranty, and RMA.
           </p>
         </div>
 
@@ -115,7 +115,7 @@
             <h3>One spine (Dataplicity)</h3>
             <p>
               The device is the unit of work. Dashboards, incidents, terminals, and fleet jobs
-              all point at the same fleet — including commercial lifecycle (licences, warranty, RMA).
+              all point at the same fleet, including commercial lifecycle (licences, warranty, RMA).
             </p>
           </article>
         </div>
@@ -124,7 +124,7 @@
       <section class="section" id="devices">
         <div class="section__head">
           <p class="eyebrow">1 · After devices ship</p>
-          <h2>SiloSentry’s gateways land in Dataplicity — and stay reachable.</h2>
+          <h2>SiloSentry’s gateways land in Dataplicity, and stay reachable.</h2>
           <p class="section__sub">
             This is the foundation. Everything else (dashboards, pages, jobs) hangs off these records.
           </p>
@@ -133,7 +133,7 @@
         <ol class="loop">
           <li>
             <strong>Install outbound</strong>
-            <span>A first-boot command. Outbound only — works on LTE and farm routers.</span>
+            <span>A first-boot command. Outbound only. Works on LTE and farm routers.</span>
           </li>
           <li>
             <strong>It shows up</strong>
@@ -145,7 +145,7 @@
           </li>
           <li>
             <strong>Act on many</strong>
-            <span>Alerts, drift detection, and fleet commands — still keyed to those devices.</span>
+            <span>Alerts, drift detection, and fleet commands, still keyed to those devices.</span>
           </li>
         </ol>
 
@@ -169,7 +169,7 @@
             <p class="beat__label">When one box needs a human</p>
             <h3>Terminal on that same record</h3>
             <p>
-              You’re not jumping to a separate VPN tool. The shell is on the device page —
+              You’re not jumping to a separate VPN tool. The shell is on the device page,
               next to the same identity dashboards and incidents will refer to.
             </p>
           </div>
@@ -183,7 +183,7 @@
       <section class="section" id="company">
         <div class="section__head">
           <p class="eyebrow">2 · Running the company</p>
-          <h2>Ops wall, incidents, progression, remediations — same account.</h2>
+          <h2>Ops wall, incidents, progression, remediations. Same account.</h2>
           <p class="section__sub">
             This is the “what would my company look like?” part: not a feature dump,
             the shapes SiloSentry would actually use day to day.
@@ -196,7 +196,7 @@
             <h3>A monitoring wall fed by your devices</h3>
             <p>
               Not a generic KPI collage. SiloSentry’s “Plains elevators” display is built from
-              their Dataplicity fleet and monitors — check-ins, map, on-call strip.
+              their Dataplicity fleet and monitors: check-ins, map, on-call strip.
             </p>
           </div>
           <figure class="shot beat__shot">
@@ -211,7 +211,7 @@
             <h3>Page people about things that already exist here</h3>
             <p>
               A tower’s probe service down. Customer-cloud latency.
-              Ack, own, escalate, publish — with the device or endpoint named on the incident.
+              Ack, own, escalate, publish, with the device or endpoint named on the incident.
             </p>
           </div>
           <figure class="shot beat__shot">
@@ -225,7 +225,7 @@
             <p class="beat__label">On-call</p>
             <h3>Who gets woken</h3>
             <p>
-              Escalation paths and mobile alerts live beside those incidents —
+              Escalation paths and mobile alerts live beside those incidents,
               not a separate vendor login your team forgets the password to.
             </p>
           </div>
@@ -240,8 +240,8 @@
             <p class="beat__label">Fleet progression</p>
             <h3>Online isn’t always “healthy”</h3>
             <p>
-              Device Class Pulse watches whether gateways still look like their peers over time —
-              e.g. a missing service or climbing disk — so ops sees change, not just up/down.
+              Device Class Pulse watches whether gateways still look like their peers over time
+              (a missing service, climbing disk, and so on), so ops sees change, not just up/down.
             </p>
           </div>
           <figure class="shot beat__shot">
@@ -250,7 +250,7 @@
               alt="Device Class Pulse overview"
               loading="lazy"
             />
-            <figcaption>Pulse on the Probe GW class — drift over time.</figcaption>
+            <figcaption>Pulse on the Probe GW class: drift over time.</figcaption>
           </figure>
         </article>
 
@@ -259,7 +259,7 @@
             <p class="beat__label">Fixes at scale</p>
             <h3>Run a command across many gateways</h3>
             <p>
-              Harvest readiness checks, restarts, cleanups — as fleet jobs with per-device results.
+              Harvest readiness checks, restarts, cleanups, run as fleet jobs with per-device results.
               The same place that paged you also runs the remediation.
             </p>
           </div>
@@ -311,7 +311,7 @@
             <div class="day__body">
               <h3>Lifecycle stays attached</h3>
               <p>
-                Customers, licences, warranty, RMA — still in the same product.
+                Customers, licences, warranty, and RMA stay in the same product.
                 Hardware support didn’t end at install day.
               </p>
             </div>
@@ -326,7 +326,7 @@
           <p class="section__sub">
             Replace grain bins with your hardware. The shape stays:
             devices you can reach, ops you can see, incidents you can page,
-            fixes you can run, lifecycle you can keep — in one place.
+            fixes you can run, lifecycle you can keep, all in one place.
           </p>
         </div>
         <p class="mapline">
@@ -345,7 +345,7 @@
         <span>Worked example via SiloSentry · silosentry.com</span>
       </div>
       <p>
-        SiloSentry is not a real company or product — an illustrative setting for
+        SiloSentry is not a real company or product. It is an illustrative setting for
         <a href="https://www.dataplicity.com/">Dataplicity</a>.
       </p>
     </footer>

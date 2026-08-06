@@ -70,7 +70,7 @@ code,
   padding: 0.5rem 0.75rem;
 }
 
-/* —— header —— */
+/* header */
 .top {
   position: sticky;
   top: 0;
@@ -179,7 +179,7 @@ code,
   }
 }
 
-/* —— hero —— */
+/* hero */
 .hero {
   position: relative;
   overflow: hidden;
@@ -357,7 +357,7 @@ code,
   color: var(--ink);
 }
 
-/* —— bands / sections —— */
+/* bands / sections */
 .band--note {
   border-block: 1px solid var(--line);
   background: var(--bg-elev);
