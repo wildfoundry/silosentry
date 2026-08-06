@@ -3,7 +3,7 @@
   if (reduce) return;
 
   const nodes = document.querySelectorAll(
-    ".section__head, .skus, .planes, .arch, .steps, .shot, .timeline article, .payback, .mapline, .close-cta"
+    ".section__head, .planes, .beat, .day__step, .mapline, .close-cta"
   );
   nodes.forEach((el) => el.classList.add("reveal"));
 
