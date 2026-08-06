@@ -1,10 +1,10 @@
 # SiloSentry
 
-Fictional Midwest agtech OEM — Dataplicity’s [Rocket Rides](https://rocketrides.io/)-style reference company.
+Made-up Midwest agtech OEM used to illustrate [Dataplicity](https://www.dataplicity.com/).
 
 **Site:** [silosentry.com](https://silosentry.com) (GitHub Pages from this repo)
 
-This is an *inverse* product site: it shows how SiloSentry would actually operate grain-bin gateways on [Dataplicity](https://www.dataplicity.com/) (provisioning, Wormhole, terminal, alerts, status, OEM licences/RMA), not a co-op marketing pitch.
+Inverse product site: shows how a grain-bin sensor company would actually operate gateways on Dataplicity (provisioning, Wormhole, terminal, alerts, status, OEM licences/RMA) — not a co-op sales pitch. Clearly fictional; the ops model is meant to feel real.
 
 ## Local preview
 
