@@ -508,7 +508,7 @@ code,
 }
 
 .shot {
-  margin: 0 0 1.5rem;
+  margin: 0;
 }
 
 .shot img {
@@ -523,53 +523,116 @@ code,
   color: var(--ink-dim);
 }
 
-.pair {
+/* Narrative beat: copy + one supporting shot */
+.beat {
   display: grid;
-  gap: 1.25rem;
-}
-
-@media (min-width: 860px) {
-  .pair {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.timeline {
-  display: grid;
-  gap: 1.25rem;
+  gap: 1.5rem;
+  margin-top: 2.75rem;
+  align-items: start;
 }
 
 @media (min-width: 900px) {
-  .timeline {
-    grid-template-columns: 1fr 1fr;
+  .beat {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.15fr);
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .beat--reverse .beat__copy {
+    order: 2;
+  }
+
+  .beat--reverse .beat__shot {
+    order: 1;
   }
 }
 
-.timeline article {
-  padding: 1.25rem 1.3rem 1.4rem;
-  border-top: 2px solid var(--straw-dim);
-  background: var(--bg-elev);
+.beat__label {
+  margin: 0 0 0.45rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--straw);
 }
 
-.timeline time {
-  display: block;
+.beat__copy h3 {
+  margin: 0 0 0.7rem;
+  font-family: var(--display);
+  font-size: clamp(1.35rem, 2.4vw, 1.7rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.beat__copy > p {
+  margin: 0;
+  color: var(--ink-dim);
+}
+
+.beat__points {
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.beat__points li {
+  padding: 0.65rem 0.8rem;
+  border-left: 2px solid var(--straw-dim);
+  background: var(--bg-elev);
+  color: var(--ink-dim);
+  font-size: 0.95rem;
+}
+
+.beat__points strong {
+  color: var(--ink);
+}
+
+/* Day story: time + prose, shot only when it earns its place */
+.day {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+
+.day__step {
+  display: grid;
+  gap: 0.75rem 1.5rem;
+  padding: 1.75rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+@media (min-width: 720px) {
+  .day__step {
+    grid-template-columns: 7.5rem minmax(0, 1fr);
+  }
+}
+
+.day__step time {
   font-family: ui-monospace, Menlo, monospace;
   font-size: 0.8rem;
   color: var(--straw);
-  margin-bottom: 0.35rem;
+  padding-top: 0.2rem;
 }
 
-.timeline h3 {
-  margin: 0 0 0.45rem;
+.day__body h3 {
+  margin: 0 0 0.5rem;
   font-family: var(--display);
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   font-weight: 600;
 }
 
-.timeline p {
+.day__body > p {
   margin: 0;
   color: var(--ink-dim);
-  font-size: 0.98rem;
+  max-width: 40rem;
+}
+
+.day__body .shot {
+  margin-top: 1.25rem;
+  max-width: 48rem;
 }
 
 .payback {

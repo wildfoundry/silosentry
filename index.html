@@ -36,7 +36,7 @@
         <a href="#inside">Inside</a>
         <a href="#pulse">Pulse</a>
         <a href="#jobs">Fleet jobs</a>
-        <a href="#access">Access</a>
+        <a href="#breakglass">Break-glass</a>
         <a href="#day">A day</a>
       </nav>
       <a class="top__dp" href="https://www.dataplicity.com/" rel="noopener">Built on Dataplicity</a>
@@ -68,9 +68,8 @@
 
       <section class="band band--note" aria-label="About this site">
         <p>
-          SiloSentry is made-up but operated like a real Dataplicity org: co-op Networks, device classes for SKUs,
-          Device Class Pulse fingerprints over time, and fleet jobs when someone needs the same command across many boxes.
-          Screenshots are from a local demo of that org — not a product pitch deck.
+          SiloSentry is made-up but operated like a real Dataplicity org. The screens below are from that demo —
+          used as evidence in the story, not as a screenshot gallery.
         </p>
       </section>
 
@@ -83,6 +82,7 @@
             which elevator, which SKU, who’s online, what’s drifted, what ran last week.
           </p>
         </div>
+
         <div class="planes">
           <article>
             <h3>Their cloud</h3>
@@ -95,20 +95,22 @@
             <p>Provision, presence, Pulse, fleet jobs, Wormhole, terminal, alerts. How the company keeps shipping hardware supportable.</p>
           </article>
         </div>
-        <figure class="shot">
-          <img src="screenshots/09-device-fleet.png" alt="SiloSentry device fleet in Dataplicity" loading="lazy" />
-          <figcaption>The working fleet — gateways grouped by elevator Networks and SKU classes.</figcaption>
-        </figure>
-        <div class="pair">
-          <figure class="shot">
-            <img src="screenshots/10-device-classes.png" alt="Device classes for SiloSentry SKUs" loading="lazy" />
-            <figcaption>Device classes = hardware SKUs (Probe GW, Site Gateway, …).</figcaption>
+
+        <article class="beat">
+          <div class="beat__copy">
+            <p class="beat__label">The working org</p>
+            <h3>Twenty-nine gateways across Plains elevators</h3>
+            <p>
+              Probe GWs hang in bins. Site Gateways sit at the truck dump and scale house.
+              Device classes stand in for SKUs; Networks stand in for co-ops. When support picks up the phone,
+              they open this list — not a VPN spreadsheet.
+            </p>
+          </div>
+          <figure class="shot beat__shot">
+            <img src="screenshots/09-device-fleet.png" alt="SiloSentry device fleet in Dataplicity" loading="lazy" />
+            <figcaption>Device management in the SiloSentry Dataplicity org.</figcaption>
           </figure>
-          <figure class="shot">
-            <img src="screenshots/28-platform-provisioning.png" alt="Provisioning gateways" loading="lazy" />
-            <figcaption>Factory / field install: outbound agent, no inbound ports.</figcaption>
-          </figure>
-        </div>
+        </article>
       </section>
 
       <section class="section" id="pulse">
@@ -116,152 +118,210 @@
           <p class="eyebrow">Device Class Pulse</p>
           <h2>Watch the class learn “normal” — then see who leaves it.</h2>
           <p class="section__sub">
-            For SiloSentry’s Probe GW class, Pulse fingerprints OS, processes, disk, agent version, and more.
-            Over days you get a progression story: coverage stays high, then one tower drifts when
-            <code>probe-daemon</code> disappears and root disk climbs. That’s how ops understands fleet change without SSHing every box.
+            Online/offline tells you a box is quiet. Pulse tells you a quiet box still looks like its peers —
+            or that Tower 2 stopped running <code>probe-daemon</code> three days ago while coverage stayed full.
           </p>
         </div>
-        <figure class="shot">
-          <img
-            src="screenshots/32-device-class-pulse-overview.png"
-            alt="Pulse overview on SiloSentry Probe GW device class"
-            loading="lazy"
-          />
-          <figcaption>
-            Class overview — Pulse calls out drifting devices and charts open findings over time.
-          </figcaption>
-        </figure>
-        <figure class="shot">
-          <img
-            src="screenshots/33-device-class-pulse.png"
-            alt="Full Device Class Pulse tab with drift and coverage charts"
-            loading="lazy"
-          />
-          <figcaption>
-            Pulse tab — drift count over time, reporting coverage, and signal groups (storage, processes, agent, …).
-          </figcaption>
-        </figure>
-        <ol class="steps">
-          <li>
-            <strong>Learn the class</strong>
-            <span>Fingerprints land on a cadence. The model becomes “what Probe GW usually looks like.”</span>
-          </li>
-          <li>
-            <strong>Spot progression</strong>
-            <span>Charts show when drift appears — not just a binary online/offline.</span>
-          </li>
-          <li>
-            <strong>Explain the finding</strong>
-            <span>Which signals changed (process set, disk, agent) and how unusual vs peers.</span>
-          </li>
-        </ol>
+
+        <article class="beat beat--reverse">
+          <div class="beat__copy">
+            <p class="beat__label">On the Probe GW class</p>
+            <h3>One device drifting from normal</h3>
+            <p>
+              Fingerprints land on a cadence: OS, process set, disk, agent version.
+              The class overview surfaces the story ops cares about —
+              what’s different, how many devices, and when the drift started climbing on the chart.
+            </p>
+            <ul class="beat__points">
+              <li><strong>Process set</strong> — <code>probe-daemon</code> missing vs peers</li>
+              <li><strong>Root disk</strong> — fill above the class normal</li>
+              <li><strong>Coverage</strong> — 24 of 24 still reporting, so this isn’t “lost”</li>
+            </ul>
+          </div>
+          <figure class="shot beat__shot">
+            <img
+              src="screenshots/32-device-class-pulse-overview.png"
+              alt="Pulse overview on SiloSentry Probe GW device class"
+              loading="lazy"
+            />
+            <figcaption>Pulse on the class overview — drift called out with history.</figcaption>
+          </figure>
+        </article>
+
+        <article class="beat">
+          <div class="beat__copy">
+            <p class="beat__label">Open the Pulse tab</p>
+            <h3>Progression over time, not a single alert</h3>
+            <p>
+              Drift stays flat for weeks, then steps up when Tower 2 changes.
+              Signal groups (storage, processes, agent) keep the finding explainable —
+              so the next action isn’t “SSH everything,” it’s “fix that tower.”
+            </p>
+          </div>
+          <figure class="shot beat__shot">
+            <img
+              src="screenshots/33-device-class-pulse.png"
+              alt="Device Class Pulse tab with drift and coverage charts"
+              loading="lazy"
+            />
+            <figcaption>Pulse tab — drift chart, coverage, and signal groups.</figcaption>
+          </figure>
+        </article>
       </section>
 
       <section class="section" id="jobs">
         <div class="section__head">
           <p class="eyebrow">Fleet jobs</p>
-          <h2>When Pulse (or harvest) says “act,” run a guarded command across the set.</h2>
+          <h2>When Pulse (or harvest) says “act,” run one command across the set.</h2>
           <p class="section__sub">
-            SiloSentry doesn’t fix Tower 2 by emailing a field tech a shell one-liner twenty-nine times.
-            Fleet jobs carry the same command to selected devices with retries and history —
-            harvest readiness sweeps, log vacuums after disk pressure, restarts after Pulse drift.
+            SiloSentry doesn’t paste the same shell one-liner into twenty-nine tickets.
+            A fleet job carries a guarded command to selected devices with retries and a history ops can reopen later.
           </p>
         </div>
-        <figure class="shot">
-          <img src="screenshots/30-fleet-jobs.png" alt="Fleet jobs list for SiloSentry" loading="lazy" />
-          <figcaption>
-            Fleet jobs history — running harvest checks, completed log vacuums, remediations in flight.
-          </figcaption>
-        </figure>
-        <figure class="shot">
-          <img
-            src="screenshots/31-fleet-job-detail.png"
-            alt="Fleet job detail with per-device results"
-            loading="lazy"
-          />
-          <figcaption>
-            Job detail — per-device success/fail for a probe-daemon readiness check across the fleet.
-          </figcaption>
-        </figure>
-        <div class="timeline">
-          <article>
-            <time>Before harvest</time>
-            <h3>Readiness sweep</h3>
-            <p><code>systemctl is-active probe-daemon</code> across critical bins — one job, one history.</p>
-          </article>
-          <article>
-            <time>Disk pressure</time>
-            <h3>Log vacuum</h3>
-            <p>Site gateways get a journal vacuum after Pulse / alerts show fill climbing.</p>
-          </article>
-          <article>
-            <time>After drift</time>
-            <h3>Targeted restart</h3>
-            <p>Pulse flags Tower 2 → fleet job restarts <code>probe-daemon</code> on that device set.</p>
-          </article>
-        </div>
+
+        <article class="beat">
+          <div class="beat__copy">
+            <p class="beat__label">Before harvest</p>
+            <h3>Readiness, log vacuums, remediations</h3>
+            <p>
+              The jobs list is the company’s muscle memory:
+              confirm <code>probe-daemon</code> on critical bins, vacuum journals after disk pressure,
+              restart the tower Pulse already flagged. Running and completed sit in one place.
+            </p>
+          </div>
+          <figure class="shot beat__shot">
+            <img src="screenshots/30-fleet-jobs.png" alt="Fleet jobs list for SiloSentry" loading="lazy" />
+            <figcaption>Fleet jobs — harvest checks and remediations in flight.</figcaption>
+          </figure>
+        </article>
+
+        <article class="beat beat--reverse">
+          <div class="beat__copy">
+            <p class="beat__label">Open a job</p>
+            <h3>Per-device success, not a vague “done”</h3>
+            <p>
+              A readiness sweep isn’t finished when the dialog closes.
+              Ops wants which gateway returned active, which failed, and who still needs a human.
+              That’s the same record they’ll cite when a co-op asks what ran before harvest.
+            </p>
+          </div>
+          <figure class="shot beat__shot">
+            <img
+              src="screenshots/31-fleet-job-detail.png"
+              alt="Fleet job detail with per-device results"
+              loading="lazy"
+            />
+            <figcaption>Job detail — probe-daemon check results across the fleet.</figcaption>
+          </figure>
+        </article>
       </section>
 
-      <section class="section" id="access">
+      <section class="section" id="breakglass">
         <div class="section__head">
-          <p class="eyebrow">When one box needs a human</p>
-          <h2>Wormhole into the local UI. Terminal when the process is wedged.</h2>
+          <p class="eyebrow">When one box won’t cooperate</p>
+          <h2>Fleet tools handle the many. Break-glass finishes the one.</h2>
           <p class="section__sub">
-            Fleet tools handle the many. For the one gateway that’s stuck, SiloSentry still opens the device-local admin
-            over HTTPS or drops to a browser shell — still without a truck roll or a public IP.
+            If the job fails on Tower 2, SiloSentry still opens that gateway’s record —
+            Wormhole into the local UI, or a browser terminal — without a truck roll or a public IP.
           </p>
         </div>
-        <div class="pair">
-          <figure class="shot">
-            <img src="screenshots/06-module-wormhole.png" alt="Dataplicity Wormhole" loading="lazy" />
-            <figcaption>Wormhole — HTTPS to a device-local web UI.</figcaption>
+
+        <article class="beat">
+          <div class="beat__copy">
+            <p class="beat__label">The leftover device</p>
+            <h3>SS-GF-01 · Silo A — Hard Red Spring</h3>
+            <p>
+              One record holds agent version, class, organisation, and the path into Wormhole or Terminal.
+              This is where the progression story ends for a single box:
+              Pulse said it drifted, the job didn’t clear it, a human finishes it here.
+            </p>
+          </div>
+          <figure class="shot beat__shot">
+            <img src="screenshots/11-device-detail.png" alt="Device detail for a SiloSentry gateway" loading="lazy" />
+            <figcaption>Device overview — the break-glass entry point.</figcaption>
           </figure>
-          <figure class="shot">
-            <img src="screenshots/24-terminal.png" alt="Dataplicity remote terminal" loading="lazy" />
-            <figcaption>Browser terminal for journals, services, modem resets.</figcaption>
+        </article>
+
+        <article class="beat beat--reverse">
+          <div class="beat__copy">
+            <p class="beat__label">Wormhole &amp; terminal</p>
+            <h3>Local UI over HTTPS. Shell when the process is wedged.</h3>
+            <p>
+              Edge gateways usually host a small admin page on localhost — Wormhole publishes that.
+              When journals and service restarts are the only path left, the browser terminal is still
+              in the same SiloSentry org, next to Pingüino for safe command suggestions.
+            </p>
+          </div>
+          <figure class="shot beat__shot">
+            <img src="screenshots/24-terminal.png" alt="Remote terminal on a SiloSentry gateway" loading="lazy" />
+            <figcaption>Terminal session for SS-GF-01 — even when the device is offline, the ops path is clear.</figcaption>
           </figure>
-        </div>
-        <figure class="shot">
-          <img src="screenshots/11-device-detail.png" alt="Device detail in Dataplicity" loading="lazy" />
-          <figcaption>One gateway’s record: agent, OS, connectivity, Web CLI.</figcaption>
-        </figure>
+        </article>
       </section>
 
       <section class="section" id="day">
         <div class="section__head">
           <p class="eyebrow">In practice</p>
-          <h2>What progression looks like on a real ops day.</h2>
+          <h2>What that progression looks like on one ops day.</h2>
+          <p class="section__sub">
+            Same tools, in order — attention → class drift → act across many → finish the leftover.
+          </p>
         </div>
-        <div class="timeline">
-          <article>
+
+        <div class="day">
+          <article class="day__step">
             <time>Morning</time>
-            <h3>Pulse on Probe GW</h3>
-            <p>Open the class. Coverage is full. One device drifted three days ago — <code>probe-daemon</code> gone, disk high.</p>
+            <div class="day__body">
+              <h3>What needs you right now</h3>
+              <p>
+                Operations overview is the morning scan: alerts waiting, detections,
+                whether the fleet offline spike is maintenance or a real outage.
+                Then ops opens Probe GW Pulse — coverage full, one device drifting.
+              </p>
+              <figure class="shot">
+                <img src="screenshots/08-operations-dashboard.png" alt="Operations overview" loading="lazy" />
+                <figcaption>Operations overview — triage before deep dives.</figcaption>
+              </figure>
+            </div>
           </article>
-          <article>
+
+          <article class="day__step">
             <time>Mid-morning</time>
-            <h3>Fleet job</h3>
-            <p>Restart probe-daemon on that tower (or the readiness sweep if harvest is close). Watch per-device results.</p>
+            <div class="day__body">
+              <h3>Act with a fleet job</h3>
+              <p>
+                Restart <code>probe-daemon</code> on the drifted tower, or run the harvest readiness sweep
+                if the co-op is loading trucks tomorrow. Watch per-device results before anyone drives out.
+              </p>
+            </div>
           </article>
-          <article>
+
+          <article class="day__step">
             <time>Afternoon</time>
-            <h3>Break-glass</h3>
-            <p>If the job fails, Wormhole / terminal on that one box. File request if a tech is already on site.</p>
+            <div class="day__body">
+              <h3>Break-glass on whatever’s left</h3>
+              <p>
+                If a job fails, open that device. Wormhole or terminal. Alerts stay in the inbox for anything
+                still offline after the remediations — so the day doesn’t end as a pile of unread Slack pings.
+              </p>
+              <figure class="shot">
+                <img src="screenshots/14-alerts.png" alt="Alerts inbox for SiloSentry" loading="lazy" />
+                <figcaption>Alerts inbox — what’s still active after the morning pass.</figcaption>
+              </figure>
+            </div>
           </article>
-          <article>
+
+          <article class="day__step">
             <time>Later</time>
-            <h3>Ship more hardware</h3>
-            <p>New Probe GWs join the class. Pulse folds them into “normal.” The progression story continues.</p>
+            <div class="day__body">
+              <h3>Ship more hardware</h3>
+              <p>
+                New Probe GWs join the class. Pulse folds them into “normal.”
+                The progression story continues — class → drift → jobs → break-glass — without reinventing support.
+              </p>
+            </div>
           </article>
         </div>
-        <figure class="shot">
-          <img src="screenshots/08-operations-dashboard.png" alt="Operations overview" loading="lazy" />
-          <figcaption>Operations overview — what needs attention alongside Pulse and jobs.</figcaption>
-        </figure>
-        <figure class="shot">
-          <img src="screenshots/14-alerts.png" alt="Alerts inbox" loading="lazy" />
-          <figcaption>Offline and device alerts into Slack / on-call.</figcaption>
-        </figure>
       </section>
 
       <section class="section section--close" id="map">
