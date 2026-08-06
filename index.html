@@ -3,16 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>What Dataplicity is — seen through SiloSentry</title>
+    <title>Running an IoT company on Dataplicity — SiloSentry</title>
     <meta
       name="description"
-      content="Dataplicity is how you remotely operate Linux devices after they ship — without VPN or inbound ports. SiloSentry is a made-up grain IoT company that shows what that looks like in practice."
+      content="How would it look if you ran your IoT product company on Dataplicity after devices ship? SiloSentry is a made-up grain OEM that shows the integrated device lifecycle — not a pile of tool replacements."
     />
     <link rel="canonical" href="https://silosentry.com/" />
-    <meta property="og:title" content="What Dataplicity is — seen through SiloSentry" />
+    <meta property="og:title" content="Running an IoT company on Dataplicity — SiloSentry" />
     <meta
       property="og:description"
-      content="A concrete walkthrough: install an outbound agent, reach the device, run the fleet — told through a made-up IoT OEM."
+      content="A worked example of post-ship device ops: reach, monitor, escalate, remediate — with devices and lifecycle at the core."
     />
     <meta property="og:url" content="https://silosentry.com/" />
     <meta property="og:type" content="website" />
@@ -33,8 +33,9 @@
         SiloSentry
       </a>
       <nav class="nav" aria-label="Primary">
-        <a href="#loop">The loop</a>
-        <a href="#scale">At scale</a>
+        <a href="#not-tools">Not tool salad</a>
+        <a href="#devices">Devices</a>
+        <a href="#company">Run the company</a>
         <a href="#day">A day</a>
       </nav>
       <a class="top__dp" href="https://www.dataplicity.com/" rel="noopener">dataplicity.com</a>
@@ -46,190 +47,205 @@
         <div class="hero__inner">
           <div class="hero__copy">
             <p class="eyebrow">Worked example · SiloSentry is not a real company</p>
-            <h1>What <a href="https://www.dataplicity.com/">Dataplicity</a> is</h1>
+            <h1>How would it look if you ran your IoT company on <a href="https://www.dataplicity.com/">Dataplicity</a>?</h1>
             <p class="lede">
-              Remote access and ops for Linux devices after they leave the factory —
-              without VPN, inbound ports, or a truck for every stuck service.
-              SiloSentry is the made-up grain-bin OEM we use so that idea isn’t abstract.
+              After the boxes leave the factory — reach them, see the fleet, page the right people,
+              fix many devices, finish the leftover one, and carry the same record through warranty and RMA.
+              SiloSentry is the made-up grain-bin OEM we use so that picture isn’t abstract.
             </p>
             <div class="hero__actions">
-              <a class="btn btn--primary" href="#loop">See the loop</a>
-              <a class="btn btn--ghost" href="#scale">Then see it at fleet scale</a>
+              <a class="btn btn--primary" href="#company">See the company running</a>
+              <a class="btn btn--ghost" href="#devices">Start from the devices</a>
             </div>
-          </div>
-
-          <div class="contrast contrast--hero" aria-label="Without Dataplicity versus with it">
-            <article>
-              <h3>Without it</h3>
-              <p>
-                VPN snowflakes, port forwards that die on LTE,
-                “can you reboot it?”, truck rolls for a wedged process,
-                no shared picture of the fleet this week.
-              </p>
-            </article>
-            <article>
-              <h3>With Dataplicity</h3>
-              <p>
-                Install an outbound agent. The device appears.
-                Open its local UI or a browser shell. Know who’s quiet.
-                Run the same fix across many — for years.
-              </p>
-            </article>
           </div>
         </div>
       </section>
 
-      <section class="band band--note" aria-label="How to read this site">
-        <p>
-          SiloSentry’s product is bin telemetry.
-          <em>Dataplicity is how their support team keeps those gateways operable</em>
-          after the install crew leaves. Screens below are evidence for that story.
-        </p>
+      <section class="section" id="not-tools">
+        <div class="section__head">
+          <p class="eyebrow">The point</p>
+          <h2>Not a PagerDuty clone. Not a Geckoboard wall. Not “SSH in the cloud.”</h2>
+          <p class="section__sub">
+            Those tools solve slices. An IoT product company needs the slices attached to the
+            <em>same device records</em> — provision → presence → remote access → monitoring →
+            incidents → remediations → commercial lifecycle — without duct-taping five vendors together.
+          </p>
+        </div>
+
+        <div class="contrast">
+          <article>
+            <h3>Tool salad</h3>
+            <p>
+              A status board here, an on-call pager there, a VPN spreadsheet for shells,
+              a separate ticket for RMA. The device is the missing primary key —
+              every escalation starts with “which box?” and ends in Slack archaeology.
+            </p>
+          </article>
+          <article>
+            <h3>Dataplicity as the spine</h3>
+            <p>
+              The device is the unit of work. Dashboards watch fleets that already exist in the account.
+              Incidents page humans about those same devices. Fleet jobs and terminals act on them.
+              Licences, warranty, and RMA stay on the same org — because shipping hardware didn’t stop at install.
+            </p>
+          </article>
+        </div>
       </section>
 
-      <section class="section" id="loop">
+      <section class="section" id="devices">
         <div class="section__head">
-          <p class="eyebrow">The core loop</p>
-          <h2>Four moves. Everything else is scale.</h2>
+          <p class="eyebrow">After they ship</p>
+          <h2>Everything starts with devices you can still reach.</h2>
           <p class="section__sub">
-            If you only remember this, you understand Dataplicity.
-            Pulse and fleet jobs are how a company like SiloSentry runs that loop across dozens of sites —
-            they aren’t the starting definition.
+            SiloSentry’s cloud sells bin telemetry. Dataplicity is how support keeps the Linux gateways operable —
+            outbound agent, no inbound ports, one inventory for every elevator.
           </p>
         </div>
 
         <ol class="loop">
           <li>
-            <strong>Ship with an install</strong>
-            <span>A one-liner at first boot. Outbound TLS only — works behind farm routers and LTE.</span>
+            <strong>Install outbound</strong>
+            <span>First-boot one-liner. Works behind farm routers and LTE.</span>
           </li>
           <li>
             <strong>It shows up</strong>
-            <span>The gateway lands in the org, tagged by site and SKU. Support can find it without asking for an IP.</span>
+            <span>Org inventory by site and SKU — not an IP someone texted you.</span>
           </li>
           <li>
             <strong>Reach it</strong>
-            <span>Wormhole opens the device’s local admin over HTTPS. Terminal is break-glass when a process is stuck.</span>
+            <span>Wormhole for the local UI. Terminal when a process is wedged.</span>
           </li>
           <li>
-            <strong>Know when it’s quiet</strong>
-            <span>Alerts and an ops overview tell you something needs a human before harvest calls pile up.</span>
+            <strong>Act on many</strong>
+            <span>Fleet jobs, Pulse drift, alerts — still keyed to those devices.</span>
           </li>
         </ol>
 
         <article class="beat">
           <div class="beat__copy">
-            <p class="beat__label">Step 2 — it shows up</p>
-            <h3>This is the fleet you support</h3>
+            <p class="beat__label">The inventory</p>
+            <h3>This is the fleet the company supports</h3>
             <p>
-              Not a metaphor. In Dataplicity, SiloSentry’s gateways are rows you can search:
-              Probe GWs in bins, Site Gateways at the truck dump. Same list whether the co-op is in Grand Forks or Amarillo.
+              Probe GWs in bins. Site Gateways at the truck dump.
+              Same list whether the co-op is in Grand Forks or Amarillo —
+              the starting point for dashboards, pages, and remediations.
             </p>
-            <p class="callout">Look for: device names, classes, the org name <em>SILOSENTRY</em> in the sidebar.</p>
           </div>
           <figure class="shot beat__shot">
-            <img src="screenshots/09-device-fleet.png" alt="SiloSentry device fleet in Dataplicity" loading="lazy" />
-            <figcaption>Devices appear in the account after install — this is the inventory support works from.</figcaption>
+            <img src="screenshots/09-device-fleet.png" alt="SiloSentry device fleet" loading="lazy" />
+            <figcaption>Device management — the primary key for everything else.</figcaption>
           </figure>
         </article>
 
         <article class="beat beat--reverse">
           <div class="beat__copy">
-            <p class="beat__label">Step 3 — reach it</p>
-            <h3>Open a shell without a truck</h3>
+            <p class="beat__label">Break-glass</p>
+            <h3>Still one record when a human has to finish it</h3>
             <p>
-              When a service wedges, SiloSentry doesn’t wait for someone on site with a keyboard.
-              The terminal is in the browser, next to the same device record — even if the box is currently offline,
-              the path is obvious for when it comes back.
+              Incidents and jobs don’t replace hands-on access — they route you to the right gateway.
+              Terminal and Wormhole live on that device, not in a separate VPN world.
             </p>
-            <p class="callout">Look for: the selected gateway, Terminal in the middle, Pingüino for safe command help.</p>
           </div>
           <figure class="shot beat__shot">
-            <img src="screenshots/24-terminal.png" alt="Browser terminal for a SiloSentry gateway" loading="lazy" />
-            <figcaption>Remote terminal on one gateway — the “reach it” moment.</figcaption>
-          </figure>
-        </article>
-
-        <article class="beat">
-          <div class="beat__copy">
-            <p class="beat__label">Step 4 — know when it’s quiet</p>
-            <h3>Morning starts with attention, not archaeology</h3>
-            <p>
-              Dataplicity isn’t only “SSH in the cloud.” Ops needs a front door:
-              what’s alarming, what’s offline, what still needs triage.
-              That’s how SiloSentry decides whether today is a single tower or a whole region.
-            </p>
-            <p class="callout">Look for: Needs ack / Alarms / the “fleet is offline” tip — the scan before deep work.</p>
-          </div>
-          <figure class="shot beat__shot">
-            <img src="screenshots/08-operations-dashboard.png" alt="Dataplicity operations overview" loading="lazy" />
-            <figcaption>Operations overview — what needs a human right now.</figcaption>
+            <img src="screenshots/24-terminal.png" alt="Remote terminal on a SiloSentry gateway" loading="lazy" />
+            <figcaption>Browser terminal on SS-GF-01 — reach without a truck roll.</figcaption>
           </figure>
         </article>
       </section>
 
-      <section class="section" id="scale">
+      <section class="section" id="company">
         <div class="section__head">
-          <p class="eyebrow">At company scale</p>
-          <h2>Once the loop is clear, SiloSentry has to run it across a fleet.</h2>
+          <p class="eyebrow">Run the company</p>
+          <h2>Ops center, incidents, progression, remediations — on the same spine.</h2>
           <p class="section__sub">
-            This is the part that used to feel like a screenshot tour.
-            Read it as “what Dataplicity becomes when you ship hardware for years” —
-            not as the definition itself.
+            This is what “using Dataplicity to manage devices after they ship” looks like day to day
+            at SiloSentry — not a feature checklist, a company shape.
           </p>
         </div>
 
-        <article class="beat beat--reverse">
+        <article class="beat">
           <div class="beat__copy">
-            <p class="beat__label">Progression — Device Class Pulse</p>
-            <h3>Online isn’t the same as “still normal”</h3>
+            <p class="beat__label">Ops center dashboards</p>
+            <h3>A wall that watches <em>your</em> fleets — not a generic KPI board</h3>
             <p>
-              A gateway can be online and still wrong: <code>probe-daemon</code> gone, disk climbing.
-              Pulse learns what Probe GW usually looks like, then shows who left that normal over time.
-              That’s Dataplicity helping ops understand <em>fleet change</em>, not just presence.
+              SiloSentry’s NOC layout is built from the same org: fleet map, gateway check-ins,
+              customer-cloud monitors, on-call. It’s Geckoboard-shaped only at a glance —
+              the tiles are Dataplicity devices and monitors, not pasted screenshots from elsewhere.
             </p>
-            <p class="callout">Look for: “1 devices are drifting”, the spike on the drift chart, process / disk signals.</p>
+            <p class="callout">Look for: “Ops center — Plains elevators”, check-in heartbeats, on-call strip.</p>
           </div>
           <figure class="shot beat__shot">
-            <img
-              src="screenshots/32-device-class-pulse-overview.png"
-              alt="Pulse overview showing drift on Probe GW class"
-              loading="lazy"
-            />
-            <figcaption>Pulse on a device class — when the fleet’s fingerprint changes.</figcaption>
+            <img src="screenshots/35-ops-center-dashboard.png" alt="SiloSentry ops center dashboard" loading="lazy" />
+            <figcaption>Ops center display — monitoring keyed to the SiloSentry fleet.</figcaption>
+          </figure>
+        </article>
+
+        <article class="beat beat--reverse">
+          <div class="beat__copy">
+            <p class="beat__label">Incident response</p>
+            <h3>Page people about devices and services that already live here</h3>
+            <p>
+              Tower 2’s probe-daemon, a Red River offline cohort, customer-cloud latency —
+              ack, own, escalate, publish status. This isn’t “we also bolted on a pager.”
+              The incident names the resource your fleet already tracks.
+            </p>
+            <p class="callout">Look for: Critical Tower 2 incident, Warning on app.silosentry.com, Acknowledge actions.</p>
+          </div>
+          <figure class="shot beat__shot">
+            <img src="screenshots/36-incident-management.png" alt="Incident management in SiloSentry" loading="lazy" />
+            <figcaption>Incident management — triage tied to gateways and endpoints.</figcaption>
           </figure>
         </article>
 
         <article class="beat">
           <div class="beat__copy">
-            <p class="beat__label">Action — fleet jobs</p>
-            <h3>One guarded command, many devices</h3>
+            <p class="beat__label">On-call &amp; escalation</p>
+            <h3>Who gets woken — and for what severity</h3>
             <p>
-              When harvest is close, SiloSentry doesn’t paste the same
-              <code>systemctl is-active</code> into twenty-nine chats.
-              A fleet job runs it across the set with history —
-              Dataplicity as the place work happens, not just where you look.
+              Escalation paths and mobile Critical Alerts sit next to the incidents,
+              not in a separate vendor login. The company can answer “who owns harvest weekend?”
+              without leaving Dataplicity.
             </p>
-            <p class="callout">Look for: running vs completed jobs, progress counts, the readiness command itself.</p>
           </div>
           <figure class="shot beat__shot">
-            <img src="screenshots/30-fleet-jobs.png" alt="Fleet jobs list" loading="lazy" />
-            <figcaption>Fleet jobs — act on many devices with a single recorded run.</figcaption>
+            <img src="screenshots/37-on-call-escalations.png" alt="On-call escalations" loading="lazy" />
+            <figcaption>On-call escalations — paths and mobile paging in the same org.</figcaption>
           </figure>
         </article>
 
         <article class="beat beat--reverse">
           <div class="beat__copy">
-            <p class="beat__label">Proof — job detail</p>
-            <h3>Which boxes succeeded matters</h3>
+            <p class="beat__label">Fleet progression</p>
+            <h3>Online isn’t the same as “still normal”</h3>
             <p>
-              “We ran a fix” isn’t enough when a co-op is loading trucks.
-              Per-device results close the loop: who returned active, who failed, who still needs break-glass.
+              Pulse learns what Probe GW usually looks like, then shows who drifted —
+              missing <code>probe-daemon</code>, disk climbing — over time.
+              That’s lifecycle ops: the fleet changes, and you can see it.
             </p>
           </div>
           <figure class="shot beat__shot">
-            <img src="screenshots/31-fleet-job-detail.png" alt="Fleet job detail with per-device results" loading="lazy" />
-            <figcaption>Job detail — success and failure per gateway.</figcaption>
+            <img
+              src="screenshots/32-device-class-pulse-overview.png"
+              alt="Device Class Pulse drift overview"
+              loading="lazy"
+            />
+            <figcaption>Device Class Pulse — progression of the fleet fingerprint.</figcaption>
+          </figure>
+        </article>
+
+        <article class="beat">
+          <div class="beat__copy">
+            <p class="beat__label">Remediation at scale</p>
+            <h3>One guarded command across the set</h3>
+            <p>
+              Harvest readiness, log vacuums, targeted restarts —
+              fleet jobs record what ran on which gateway.
+              The same spine that paged you also carries the fix.
+            </p>
+          </div>
+          <figure class="shot beat__shot">
+            <img src="screenshots/30-fleet-jobs.png" alt="Fleet jobs list" loading="lazy" />
+            <figcaption>Fleet jobs — act on many devices with history.</figcaption>
           </figure>
         </article>
       </section>
@@ -237,9 +253,9 @@
       <section class="section" id="day">
         <div class="section__head">
           <p class="eyebrow">Put together</p>
-          <h2>One ops day, in Dataplicity terms.</h2>
+          <h2>One SiloSentry day on Dataplicity.</h2>
           <p class="section__sub">
-            If someone asks “so what do you actually do in it?”, this is the answer.
+            If someone asks how you’d run your IoT company after devices ship, walk them through this.
           </p>
         </div>
 
@@ -247,35 +263,50 @@
           <article class="day__step">
             <time>Morning</time>
             <div class="day__body">
-              <h3>Scan attention → open the class</h3>
+              <h3>Ops overview + wall + Pulse</h3>
               <p>
-                Operations overview first. Then Pulse on Probe GW:
-                coverage is fine, one tower drifted. That’s the Dataplicity presence + progression story in ten minutes.
+                Scan attention. Glance the Plains elevators dashboard.
+                Open Probe GW Pulse — coverage full, one tower drifting.
               </p>
+              <figure class="shot">
+                <img src="screenshots/08-operations-dashboard.png" alt="Operations overview" loading="lazy" />
+                <figcaption>Operations overview — what needs a human before deep work.</figcaption>
+              </figure>
             </div>
           </article>
           <article class="day__step">
             <time>Midday</time>
             <div class="day__body">
-              <h3>Run a fleet job</h3>
+              <h3>Incidents → fleet job</h3>
               <p>
-                Restart the drifted service, or sweep readiness before harvest.
-                Watch per-device results. This is Dataplicity as the action plane.
+                Ack the Tower 2 page. Run a restart (or harvest readiness) as a fleet job.
+                Watch per-device results before anyone drives out.
               </p>
             </div>
           </article>
           <article class="day__step">
             <time>Afternoon</time>
             <div class="day__body">
-              <h3>Break-glass on the leftover</h3>
+              <h3>Break-glass + backlog</h3>
               <p>
-                Whatever the job didn’t clear gets Wormhole or terminal on that one record.
-                Alerts keep whatever is still offline from disappearing into Slack noise.
+                Whatever didn’t clear gets terminal or Wormhole on that device record.
+                Alerts keep the rest from vanishing into Slack.
               </p>
               <figure class="shot">
                 <img src="screenshots/14-alerts.png" alt="Alerts inbox" loading="lazy" />
-                <figcaption>Alerts — the backlog after remediations.</figcaption>
+                <figcaption>Alerts — still on the same org, same devices.</figcaption>
               </figure>
+            </div>
+          </article>
+          <article class="day__step">
+            <time>Ongoing</time>
+            <div class="day__body">
+              <h3>Commercial lifecycle stays attached</h3>
+              <p>
+                Customers, licence tiers, warranty, RMA — still in the sidebar.
+                The hardware didn’t leave Dataplicity when it left the factory;
+                neither did the business process around it.
+              </p>
             </div>
           </article>
         </div>
@@ -284,17 +315,18 @@
       <section class="section section--close" id="map">
         <div class="section__head">
           <p class="eyebrow">Takeaway</p>
-          <h2>Dataplicity is the remote-ops spine. SiloSentry is just the setting.</h2>
+          <h2>That’s the picture: your IoT company, devices at the core, after they ship.</h2>
           <p class="section__sub">
-            Swap grain bins for chargers, cameras, or cold-chain nodes —
-            the loop stays: install outbound → show up → reach → know → act at scale.
+            Swap grain bins for chargers, cameras, or cold-chain nodes.
+            The shape stays — reach, watch, page, fix, finish, and carry the lifecycle —
+            in one integrated system, not a salad of lookalikes.
           </p>
         </div>
         <p class="mapline">
-          Reach Linux devices after they ship — then run the fleet that grows around them.
+          Device → presence → access → monitoring → incidents → remediations → commercial lifecycle.
         </p>
         <p class="close-cta">
-          Ready for the product, not the parable?
+          Ready for the product behind the parable?
           <a href="https://www.dataplicity.com/">Go to dataplicity.com</a>.
         </p>
       </section>
@@ -306,7 +338,7 @@
         <span>Made-up illustrative setting · silosentry.com</span>
       </div>
       <p>
-        Not a real company — a worked example for understanding
+        Not a real company — a worked example for
         <a href="https://www.dataplicity.com/">Dataplicity</a>.
       </p>
     </footer>
