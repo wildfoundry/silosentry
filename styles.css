@@ -71,6 +71,17 @@ code,
 }
 
 /* header */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 .top {
   position: sticky;
   top: 0;
@@ -152,6 +163,15 @@ code,
 
 .nav a:hover {
   color: var(--ink);
+}
+
+#orient,
+#devices,
+#company,
+#day,
+#map,
+#not-tools {
+  scroll-margin-top: 4.5rem;
 }
 
 .top__dp {
