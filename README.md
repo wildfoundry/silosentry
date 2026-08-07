@@ -20,6 +20,14 @@ python3 -m http.server 4173
 2. Custom domain: `silosentry.com` (CNAME file is already in the repo)
 3. DNS for `silosentry.com` / `www` points at GitHub Pages (managed in Dataplicity prod DNS Terraform)
 
+## Search engine files
+
+Published at the site root:
+
+- `robots.txt`
+- `sitemap.xml`
+- `llms.txt` (explicitly labels SiloSentry as a fictional Dataplicity example)
+
 ## Demo data
 
 Pulse history and fleet jobs for the local SiloSentry org can be seeded with:
